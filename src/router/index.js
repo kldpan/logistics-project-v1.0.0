@@ -14,61 +14,28 @@ const routes = [
         name: "index",
         component: () => import("@/components/index.vue"),
         meta: {
-          title: "首页",
-          uname:"Msea",
+          title: "易物流-发布货源"
         }
       },
       {
-        path: "list",
-        name:"list",
-        component: () => import("@/components/list.vue"),
+        path: "order",
+        name:"order",
+        component: () => import("@/components/order.vue"),
         meta: {
-          title: "列表页",
-        }
-      },
-      //动态路由
-      {
-        path: "list/:num",
-        name:"list",
-        component: () => import("@/components/two.vue"),
-        meta: {
-          title: "列表页",
+          title: "易物流-我的订单",
         }
       },
       {
-        path: "login",
-        name:"login",
-        component: () => import("@/components/login.vue"),
+        path: "mine",
+        name:"mine",
+        component: () => import("@/components/mine.vue"),
         meta: {
-          title: "登陆页"
+          title: "易物流-个人中心",
         }
       },
-      {
-        path: "testv",
-        name:"testv",
-        component: () => import("@/components/testv.vue"),
-        meta: {
-          title: "Vuex测试"
-        }
-      }
-    ]
+    ],
+    redirect: "/index"
   }
-  // {
-  //   path: "/user",  
-  //   name: "user",
-  //   component: () => import("@/views/user.vue"),
-  //   children: [
-  //     { path: "index", component: () => import("@/components/login.vue") }// /user/logn
-  //   ]
-  // },
-  // {
-  //   path: "/admin",  
-  //   name: "admin",
-  //   component: () => import("@/views/admin.vue"),
-  //   children: [
-  //     { path: "index", component: () => import("@/components/login.vue") }// /admin/logn
-  //   ]
-  // }
 ];
 const router = new VueRouter({
   // mode:"history",

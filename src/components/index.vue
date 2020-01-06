@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1>index</h1>
-    <div class="box"></div>
     <ul>
       <li v-for="(item,index) in dataList" :key="index">
         <p>{{item.title}}</p>
@@ -9,7 +7,6 @@
     </ul>
     <i class="fa fa-automobile fa-lg"></i> 
     <button @click="toPath">toList</button>
-    <mt-button type="default">default</mt-button>
   </div>
 </template>
 
@@ -38,7 +35,7 @@ export default {
 
     setTimeout(()=>{
       Indicator.close();
-    },5000)
+    },50)
     /*   
 
     this.$apis.getTest({name:"13456789"}).then((res)=>{
