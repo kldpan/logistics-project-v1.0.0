@@ -13,16 +13,34 @@ const routes = [
         path: "index",
         name: "index",
         component: () => import("@/components/index.vue"),
-        meta: {
-          title: "易物流-发布货源"
-        }
+        children: [
+          {
+            path: "/index/delivery",
+            name: "delivery",
+            component: () => import("@/components/delivery/delivery.vue"),
+            meta: {
+              title: "满易-发布货源"
+            },
+          },
+          {
+            path: "/index/history",
+            name:"history",
+            component:()=>import("@/components/delivery/history.vue")
+          },
+          {
+            path: "/index/permanent",
+            name:"permanent",
+            component:()=>import("@/components/delivery/permanent.vue")
+          },
+        ],
+        redirect: "index/delivery"
       },
       {
         path: "order",
         name:"order",
         component: () => import("@/components/order.vue"),
         meta: {
-          title: "易物流-我的订单",
+          title: "满易-我的订单",
         }
       },
       {
@@ -30,7 +48,15 @@ const routes = [
         name:"mine",
         component: () => import("@/components/mine.vue"),
         meta: {
-          title: "易物流-个人中心",
+          title: "满易-个人中心",
+        }
+      },
+      {
+        path: "goodsInfo",
+        name:"goodsInfo",
+        component: () => import("@/components/goodsInfo.vue"),
+        meta: {
+          title: "货物信息",
         }
       },
     ],
@@ -58,13 +84,13 @@ router.beforeEach((to, from, next) => {
       next({
         path: "/index"
       });
-    } else if (params.userType === "list") {
+    } else if (params.userType === "order") {
       next({
-        path: "/list"
+        path: "/order"
       });
-    } else if (params.userType === "test") {
+    } else if (params.userType === "mine") {
       next({
-        path: "/test"
+        path: "/mine"
       });
     }else{
       next();

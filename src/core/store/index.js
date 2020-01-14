@@ -27,6 +27,9 @@ export default new Vuex.Store({
             //类似 组件内的 computed,函数名字 直接当变量去用
     count(state){
       return state.num*state.price;
+    },
+    getRole: state => {
+      return state.role
     }
 
   },

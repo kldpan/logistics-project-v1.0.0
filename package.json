@@ -1,5 +1,5 @@
 {
-  "name": "vue_test",
+  "name": "logistics-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "mint-ui": "^2.2.13",
     "swiper": "^3.4.2",
     "vue": "^2.6.10",
+    "vue-amap": "^0.5.10",
     "vue-router": "^3.0.0",
     "vue-wechat-title": "^2.0.4",
     "vuex": "^3.0.1"
